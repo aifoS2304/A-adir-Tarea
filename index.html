@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tareas</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        display: grid;
+        /* align-items: center; */
+        grid-template-columns: 1fr minmax(400px, 1200px) 1fr;
+        grid-template-rows: auto;
+        background-color: #21D4FD;
+        background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+        height: 100vh;
+
+      }
+      .screen {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        display: none;
+      }
+      h1{
+        text-align: center;
+      }
+      .btn{
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="login" class="screen">
+        <h1>Acá se inicia sesión</h1>
+        <form id="formaInicioSesion">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" required />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" class="form-control" id="password" >
+            </div>
+            <button type="submit" class="btn btn-light btn-lg">Iniciar sesión</button>
+        </form>
+    </div>
+    
+    <div id="menu" class="screen">
+      <h1>Este es el menú</h1>
+      <p><img src="workingman.gif" alt="Workingman" ></p>
+      <button class="irAAdd btn btn-warning btn-lg" >Añadir</button>
+      <button class="irLista btn btn-warning btn-lg">Lista</button>
+      <button class="irLogin btn btn-warning btn-lg" onclick="closeSesion()">Cerrar Sesión</button>
+      
+    </div>
+    <div id="add" class="screen">
+      <h1>Acá se añaden tareas</h1>
+      <form id="formaAddTarea">
+        <div class="form-group">
+          <label for="addMateria">Materia</label>
+          <input type="text" class="form-control" id="addMateria" required />
+        </div>
+        <div class="form-group">
+          <label for="addDetalles">Detalles</label>
+          <textarea class="form-control" id="addDetalles" rows="3"></textarea>
+        </div>
+        <div class="form-row">
+          <label for="addFecha">Fecha límite</label>
+          <input type="date" class="form-control" id="addFecha" required />
+          <!-- <div class="col">
+            <input type="text" class="form-control" id="Día" placeholder="Día">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" id="Mes" placeholder="Mes">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" id="Año" placeholder="Año">
+          </div> -->
+        </div>
+        <div class="form-group">
+          <label for="addArchivo">Añadir archivo</label>
+          <input type="file" class="form-control-file" id="addArchivo">
+        </div>
+        <button type="submit" class="btn btn-light btn-lg btn-block">Crear tarea</button>
+        <input type="button" class="btn btn-light btn-lg btn-block" onclick="myFunction()" value="Cancelar">
+      </form>
+      <button class="irMenu btn btn-warning btn-lg">Menu</button>
+      <button class="irLista btn btn-warning btn-lg">Lista</button>
+      <button class="irLogin btn btn-warning btn-lg" onclick="closeSesion()">Cerrar Sesión</button>
+    </div>
+    <div id="lista" class="screen">
+      <h1>Acá se ve la lista de tareas</h1>
+      <table class="table " id="tablaTareas"> </table>
+      <button class="irAAdd btn btn-warning btn-lg">Añadir</button>
+      <button class="irMenu btn btn-warning btn-lg">Menu</button>
+      <button class="irLogin btn btn-warning btn-lg" onclick="closeSesion()">Cerrar Sesión</button>
+    </div>
+    <script src="script.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
